@@ -8,8 +8,8 @@ class SquareWave{
        this.speed=speed/5
        this.surface=surface
        this.squareLength=surface.width/(nbSquare-1)
-       this.amplitude=surface.height*amplitude
-       this.midPoint=surface.height/height
+       this.amplitude=(surface.height/10)*amplitude
+       this.midPoint=(surface.height/10)*height
        this.lines=[]
        this.generateLines()
     }
