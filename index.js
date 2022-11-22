@@ -2,29 +2,24 @@
     const canvas = document.getElementById("ocean")
     const c =canvas.getContext('2d')
 
-    canvas.width=window.innerWidth
-    canvas.height=window.innerHeight
+    canvas.width=window.innerWidth/1.5
+    canvas.height=window.innerHeight/1.5
 
 
+    let w1
+    let w2
+    let w3
 
-    let w1 = new SquareWave("rgb(66, 72, 116)",1,55,0.4,0.55,canvas)
-    let w2 =new SquareWave("rgb(220, 214, 247)",2,30,0.3,0.35,canvas)
-    let w3=new SquareWave("rgb(166, 177, 225)",0.5,20,0.2,0.1,canvas)
-
-
-    const submit1 = document.getElementById("w1-submit")
-    submit1.onclick=()=>{
-        
+    const w1Submit=()=>{        
         let speed=parseFloat(document.getElementById("w1-speed").value)
         let nbSquare=parseFloat(document.getElementById("w1-nbSquare").value)
         let amplitude=parseFloat(document.getElementById("w1-amplitude").value)
         let height=parseFloat(document.getElementById("w1-height").value)
         
         w1 = new SquareWave("rgb(66, 72, 116)",speed,nbSquare,amplitude,height,canvas)
-        console.log(w)
+        
     }
-    const submit2 = document.getElementById("w2-submit")
-    submit2.onclick=()=>{
+    const w2submit=()=>{
         
         let speed=parseInt(document.getElementById("w2-speed").value)
         let nbSquare=parseInt(document.getElementById("w2-nbSquare").value)
@@ -32,10 +27,9 @@
         let height=parseInt(document.getElementById("w2-height").value)
         
         w2 = new SquareWave("rgb(220, 214, 247)",speed,nbSquare,amplitude,height,canvas)
-        console.log(w2)
+        
     }
-    const submit3 = document.getElementById("w3-submit")
-    submit3.onclick=()=>{
+    const w3submit=()=>{
         
         let speed=parseInt(document.getElementById("w3-speed").value)
         let nbSquare=parseInt(document.getElementById("w3-nbSquare").value)
@@ -43,8 +37,21 @@
         let height=parseFloat(document.getElementById("w3-height").value)
         
         w3   = new SquareWave("rgb(166, 177, 225)",speed,nbSquare,amplitude,height,canvas)
-        console.log(w3)
+        
     }
+    const submit1 = document.getElementById("w1-submit")
+    submit1.onclick=w1Submit
+
+    const submit2 = document.getElementById("w2-submit")
+    submit2.onclick=w2submit
+
+    const submit3 = document.getElementById("w3-submit")
+    submit3.onclick=w3submit
+    
+    w1Submit()
+    w2submit()
+    w3submit()
+
 
 
     
@@ -57,8 +64,7 @@
         w3.move()
         w3.draw()
         w2.draw()
-        w1.draw()
-      
+        w1.draw()      
 
 
         requestAnimationFrame(animate)

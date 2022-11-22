@@ -1,0 +1,14 @@
+html{
+    background-color: #7597b9;
+    display: block;
+}
+canvas{
+    margin:auto;
+    display: block;
+}
+#menu{
+    margin: auto;
+  width: 50%;
+
+    display: block;
+}
