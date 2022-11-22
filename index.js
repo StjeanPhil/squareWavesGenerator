@@ -69,8 +69,11 @@
 
         requestAnimationFrame(animate)
     }
-    const clearCanvas=(surface,ctx)=>{    
-        ctx.fillStyle="red"
-        ctx.fillRect(0,0,surface.width,surface.height)
+    const clearCanvas=(surface,ctx)=>{
+        const gradient = ctx.createLinearGradient( surface.width, surface.height, surface.width,0);  
+        gradient.addColorStop(0, "blue");
+        gradient.addColorStop(1, "lightblue");  
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, surface.width, surface.height);     
     }
     animate()
