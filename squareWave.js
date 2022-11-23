@@ -100,6 +100,10 @@ class SquareWave{
 
 
     }
+    update(){
+        this.move()
+        this.draw()
+    }
 
 }
 
