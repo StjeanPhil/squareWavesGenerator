@@ -17,7 +17,7 @@
         let height=parseFloat(document.getElementById("w1-height").value)
         
         w1 = new SquareWave("rgb(66, 72, 116)",speed,nbSquare,amplitude,height,canvas)
-        
+        document.getElementById("w1-code").innerHTML="new SquareWave('rgb(66, 72, 116)',"+speed.toString()+","+nbSquare.toString()+","+amplitude.toString()+","+height.toString()+",canvas)"
     }
     const w2submit=()=>{
         
@@ -27,6 +27,8 @@
         let height=parseInt(document.getElementById("w2-height").value)
         
         w2 = new SquareWave("rgb(220, 214, 247)",speed,nbSquare,amplitude,height,canvas)
+        document.getElementById("w2-code").innerHTML="new SquareWave('rgb(220, 214, 247)',"+speed.toString()+","+nbSquare.toString()+","+amplitude.toString()+","+height.toString()+",canvas)"
+        
         
     }
     const w3submit=()=>{
@@ -37,6 +39,8 @@
         let height=parseFloat(document.getElementById("w3-height").value)
         
         w3   = new SquareWave("rgb(166, 177, 225)",speed,nbSquare,amplitude,height,canvas)
+
+        document.getElementById("w3-code").innerHTML="new SquareWave('rgb(166, 177, 225)',"+speed.toString()+","+nbSquare.toString()+","+amplitude.toString()+","+height.toString()+",canvas)"
         
     }
     const submit1 = document.getElementById("w1-submit")
